@@ -1,0 +1,242 @@
+@font-face{
+font-family: Jof;
+src: url(../res/jof.ttf);
+}
+@font-face{
+font-family: Play;
+src: url(../res/play.woff);
+}
+@font-face{
+font-family: Cantarell;
+src: url("../res/Cantarell-Regular.ttf") format("truetype");
+}
+body{
+font-family: Jof;
+background: url(../res/header.jpg) repeat #222222;
+margin: 0px 0px 0px 0px;
+}
+input{
+font-family: Play;
+}
+.request{
+font-size: 10pt;
+border: 1px solid black;
+border-radius: 4px 0px 4px 0px;
+color: black;
+}
+.request:hover{
+border-radius: 4px 0px 4px 0px;
+border: 1px solid gray;
+color: gray;
+cursor: pointer;
+}
+span.user{
+color: rgb(200,0,0);
+}
+ul{
+margin-left: auto;
+margin-right: auto;
+width: 700px;
+padding: 0px;
+}
+li{
+list-style: none;
+border-radius: 4px 0px 4px 0px;
+width: 700px;
+ -moz-box-shadow:1px 1px 2px #000;
+ -webkit-box-shadow:1px 1px 2px #000;
+ box-shadow:1px 1px 2px #000;
+}
+li:nth-child(2n+1){
+background-color: rgba(227,227,227,0.5);
+}
+a{
+text-decoration: none;
+}
+.postconsole{
+width: 410px;
+border: 1px solid gray;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 10px;
+border-radius: 4px 0px 4px 0px;
+text-align: center;
+ -moz-box-shadow:1px 1px 3px #000;
+ -webkit-box-shadow:1px 1px 3px #000;
+ box-shadow:1px 1px 3px #000;
+}
+.banner{
+font-family: Play;
+font-size: 40pt;
+text-align:center;
+background: url(../res/pattern.png) repeat-x;
+}
+.stickythread{
+margin: 2px;
+background-color: rgba(246,237,177,0.8);
+ -moz-box-shadow:1px 1px 2px #000;
+ -webkit-box-shadow:1px 1px 2px #000;
+ box-shadow:1px 1px 2px #000;
+}
+.stickythread:nth-child(2n+1){
+background-color: rgba(246,237,177,0.8);
+}
+.closethread{
+text-decoration: line-through;
+}
+.threadlist{
+
+}
+div.dash{
+font-family: Cantarell;
+text-align: right;
+background-color: black;
+height: 20px;
+font-size: 14px;
+color: #e3e3e3;
+border-radius: 0px 0px 2px 2px;
+ -moz-box-shadow:0px 0px 3px #000;
+ -webkit-box-shadow:0px 0px 3px #000;
+ box-shadow:0px 0px 3px #000;
+}
+div.dash a span{
+color: white;
+}
+
+.user{
+font-family: Play;
+color: red;
+}
+textarea{
+font-family: Play;
+width: 500px;
+}
+input{
+font-family: Play;
+border-radius: 4px 0px 4px 0px;
+}
+img{
+border-radius: 4px;
+}
+.newpost{
+font-family: Cantarell;
+font-size: 10pt;
+}
+.threadtitle{
+font-size: 18pt;
+text-align: center;
+color: black;
+}
+.postconsole{
+color: rgb(50,60,0);
+width: 510px;
+border: 1px solid gray;
+border-radius: 2px;
+}
+.post{
+color: black;
+text-align: left;
+font-family: Cantarell;
+font-size: 12pt;
+}
+
+span.agree{
+font-family: Cantarell;
+text-align: right;
+color: green;
+cursor: pointer;
+}
+span.disagree{
+font-family: Cantarell;
+text-align: right;
+color: rgb(200,0,0);
+cursor: pointer;
+}
+td.ornt{
+margin-left: auto;
+margin-right: 5px;
+text-align: right;
+width: 50px;
+}
+td.mainpost{
+width:650px;
+}
+td.lastpost{
+
+}
+input.linkbutton{
+background: url(../res/link.png);
+width: 33px;
+}
+input.imgbutton{
+background: url(../res/img.gif) no-repeat;
+width: 20px;
+}
+.footer{
+font-family: Cantarell;
+text-align: center;
+background-color: black;
+height: 70px;
+font-size: 14px;
+color: #e3e3e3;
+border-radius: 4px 4px 0px 0px;
+ -moz-box-shadow:3px 0px 0px #000;
+ -webkit-box-shadow:3px 0px 0px #000;
+ box-shadow:3px 0px 0px #000;
+}
+.footer span{
+font-size: 8pt;
+color: rgb(100,100,100);
+width: 70%;
+}
+select{
+font-family: Play;
+font-size: 8pt;
+border-radius: 4px 0px 4px 0px;
+}
+table.threadproptable{
+width: 600px;
+}
+div.poll{
+background-color: rgba(246,237,177,0.8);
+color: black;
+margin-left: auto;
+margin-right: auto;
+border-radius: 4px 0px 4px 0px;
+width: 700px;
+ -moz-box-shadow:1px 1px 2px #000;
+ -webkit-box-shadow:1px 1px 2px #000;
+ box-shadow:1px 1px 2px #000;
+}
+div.poll span{
+color: black;
+}
+div.poll span.av{
+color: gray;
+font-size: 9pt;
+}
+div.poll span.verdict{
+width: 400px;
+}
+div.poll span.count{
+width: 100px;
+font-size: 10pt;
+color: gray;
+}
+div.newpoll{
+font-family: Play;
+color: black;
+}
+div.newpoll table{
+color: black;
+}
+#nc{
+background-color: gold;
+color: black;
+border-radius: 4px 0px 4px 0px;
+}
+
+div.threadsection{
+font-size: 14pt;
+
+}

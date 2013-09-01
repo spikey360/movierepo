@@ -1,0 +1,30 @@
+@font-face{
+font-family: Play;
+src: url(../res/play.woff);
+}
+@font-face{
+font-family: Jof;
+src: url(../res/jof.ttf);
+}
+body{
+font-family: Jof;
+background: #222222;
+margin: 0px 0px 0px 0px;
+color: rgb(150,150,150);
+}
+input{
+font-family: Play;
+border-radius: 4px 0px 4px 0px;
+}
+.request{
+font-size: 10pt;
+border: 1px solid rgb(150,150,150);
+border-radius: 4px 0px 4px 0px;
+color: rgb(150,150,150);
+}
+.request:hover{
+border-radius: 4px 0px 4px 0px;
+border: 1px solid gray;
+color: gray;
+cursor: pointer;
+}
