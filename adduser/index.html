@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Register with Spikey movie repo</title>
+<link rel="stylesheet" type="text/css" href="../style/pop.css">
+</head>
+<body>
+<div id='regban'>Register</div>
+<p></p>
+<table>
+<tr><td>Mail</td><td><input type="text" id="mail" /></td></tr>
+<tr><td>Screen name</td><td><input type="text" id="sn" /></td></tr>
+<tr><td>Password</td><td><input type="password" id="pwd" /></td></tr>
+<tr><td><input type="button" id="gobutton" value="Go" onclick="tryReg();" /></td></tr>
+</table>
+<script src="../res/libAjax.js"></script>
+<script src="../lib/md5.js"></script>
+<script>
+initiateAjax(); //ajax up and running
+function resp(){
+if(xmlHttp.readyState==4){
+rt=xmlHttp.responseText;
+if(rt=="UE") {alert("Mail already registered"); return;}
+if(rt=="IS") {alert("Registered successfully, Welcome to Spikey Movie Repo"); window.close();}
+if(rt=="QF") {alert("Database error, try again");}
+}
+}
+function tryReg(){
+m=document.getElementById("mail").value;
+s=document.getElementById("sn").value;
+if(m.length<=0 || s.length<=0 || m=="Mail" || s=="Screen name") {alert("Check mail, name fields"); return;}
+setFunction(resp);
+sendRequest("adduser.php?mail="+m+"&sn="+s+"&p="+calcMD5(document.getElementById('pwd').value));
+}
+</script>
+</body>
+</html>
