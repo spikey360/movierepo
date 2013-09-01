@@ -1,0 +1,31 @@
+<html>
+<head><title>Login</title>
+<link rel="stylesheet" type="text/css" href="../style/pop.css">
+</head>
+<body>
+<table>
+<tr><td>Mail</td><td><input type="text" size="16" id="mail" /></td></tr><tr><td>Password</td><td><input type="password" size="16" id="pwd" /></td></tr><tr><td>Remember</td><td><input type="checkbox" id='rm' value="Bike" /></td></tr><tr><td><input type="button" value="Cancel" onclick='window.close();'></td><td><input type="button" value="Login" onclick="tryLogin();" /></td></tr></table>
+<script src="../res/libAjax.js"></script>
+<script src="../lib/md5.js"></script>
+<script>
+initiateAjax(); //ajax up and running
+function reso(){
+if(xmlHttp.readyState==4){
+rt=xmlHttp.responseText;
+if(rt=="CS") {window.close(); return;}
+if(rt=="UA") {alert("Invalid mail"); return;}
+if(rt=="QF") return; //do nothing
+}
+}
+function tryLogin(){
+setFunction(reso);
+if(document.getElementById('rm').checked){
+sendRequest("../login.php?m="+document.getElementById('mail').value+"&p="+calcMD5(document.getElementById('pwd').value)+"&rm=1");
+}else{
+sendRequest("../login.php?m="+document.getElementById('mail').value+"&p="+calcMD5(document.getElementById('pwd').value));
+}
+}
+</script>
+
+</body>
+</html>

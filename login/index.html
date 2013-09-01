@@ -1,0 +1,43 @@
+<html>
+<head><title>Login</title></head>
+<body>
+<div><input type="text" size="16" value="mail" id="mail" /><input type="button" value="Login" onclick="tryLogin();" /></div>
+<script src="../res/libAjax.js"></script>
+<script>
+initiateAjax(); //ajax up and running
+function reso(){
+if(xmlHttp.readyState==4){
+rt=xmlHttp.responseText;
+if(rt=="CS") {alert("Success"); window.location="/"; return;}
+if(rt=="UA") {alert("Invalid mail"); return;}
+if(rt=="QF") return; //do nothing
+}
+}
+function tryLogin(){
+setFunction(reso);
+sendRequest("../login.php?m="+document.getElementById('mail').value);
+}
+</script>
+<style>
+@font-face{
+font-family: Play;
+src: url(../res/play.woff);
+}
+body{
+font-family: Play;
+}
+input{
+font-family: Play;
+}
+.request{
+font-size: 10pt;
+border: 1px solid black;
+border-radius: 2px;
+cursor: pointer;
+}
+.request:hover{
+color: gray;
+}
+</style>
+</body>
+</html>
