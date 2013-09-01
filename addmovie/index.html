@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Add a movie</title>
+</head>
+<body onload="redirToLogin();">
+<div><span class="request" onclick="window.location='/';">Home</span></div>
+<p></p>
+<div><span>Title <input id="movin" type="text" value="" CHECKED/>
+<br>
+<input type="button" value="Add" onclick="addMovie();" />
+</span></div>
+<script src="../res/libAjax.js"></script>
+<script src="../res/util.js"></script>
+<script>
+initiateAjax();
+function resp(){
+if(xmlHttp.readyState==4){
+rt=xmlHttp.responseText;
+if(rt=="S"){
+alert("Added");}
+else{
+alert("Failed");
+}
+}
+}
+function addMovie(){
+if(document.getElementById('movin').value=="Name of movie" || document.getElementById('movin').value=="")
+ return;
+setFunction(resp);
+//sendRequest("addmovie.php?movnam="+escape(document.getElementById('movin').value)+"&on=1");
+nam=document.getElementById('movin').value;
+sendPostRequest("POST","addmovie.php","movnam="+encodeURIComponent(nam)+"&on="+getCookieParam("id"));
+}
+
+function redirToLogin(){
+if(getCookieParam("id")==""){
+window.location="/login/";
+}
+}
+</script>
+<style>
+@font-face{
+font-family: Play;
+src: url(../res/play.woff);
+}
+
+input{
+font-family: Play;
+font-size: 12pt;
+}
+
+body{
+font-family: Play;
+}
+
+.header{
+text-align: right;
+}
+.request{
+font-size: 10pt;
+border: 1px solid black;
+border-radius: 2px;
+cursor: pointer;
+}
+.request:hover{
+color: gray;
+}
+</style>
+</body>
+</html>
